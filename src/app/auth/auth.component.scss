@@ -1,0 +1,25 @@
+.bg-colored{
+  background-image: url("../../assets/img/background.png");
+  background-repeat: no-repeat;
+  background-size: cover ;
+  background-position: center center;
+}
+.bg-side{
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: 16% center;
+  background-image: url("../../assets/img/loginbg.jpg");
+  border-radius: 5px 0 0 5px;
+  h1{
+    color: white;
+    font-weight: 400;
+    text-shadow: 1px 1px gray;
+  }
+}
+.bg-white{
+  background-color: white;
+}
+mat-card{
+  padding: 0 !important;
+}
+

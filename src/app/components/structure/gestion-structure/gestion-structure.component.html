@@ -1,0 +1,83 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
+    ">
+    
+    <h1 >Gestion de paramétrages des structures centrales</h1>
+    <br>
+    
+    <a class="btn btn-success"  role="button" (click)="openDialog()">+ Créer</a>
+    
+    <br>
+
+    
+    <div class="container">
+    <div style="margin-top:10px;">
+        <mat-form-field appearance="standard">
+            <mat-label>Filter</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+          </mat-form-field>
+          
+          <div class="mat-elevation-z8">
+            <table mat-table [dataSource]="dataSource" matSort>
+          
+              <!-- ID Column -->
+              <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+                <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+              </ng-container>
+          
+              <!-- Progress Column -->
+              <ng-container matColumnDef="code">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Code structure </th>
+                <td mat-cell *matCellDef="let row"> {{row.code}} </td>
+              </ng-container>
+          
+              <!-- Name Column -->
+              <ng-container matColumnDef="libelle">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Libélle structure</th>
+                <td mat-cell *matCellDef="let row"> {{row.libelle}} </td>
+              </ng-container>
+          
+              <!-- Fruit Column -->
+              <ng-container matColumnDef="lieu_archivage1ereAge">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Lieu d'archivage 1ere âge</th>
+                <td mat-cell *matCellDef="let row"> {{row.lieu_archivage1ereAge.lieu}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="lieu_archivage2emeAge">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Lieu d'archivage 2éme âge</th>
+                <td mat-cell *matCellDef="let row"> {{row.lieu_archivage2emeAge.lieu}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+                <td mat-cell *matCellDef="let row"> 
+                    <button mat-icon-button (click)="openDialoggg(row)" color="primary" >
+                        <mat-icon>search</mat-icon>
+                    </button>  
+                    <button mat-icon-button (click)="openDialogggg(row)" color="accent" >
+                        <mat-icon>edit</mat-icon>
+                    </button>  
+                    <button mat-icon-button (click)="openDialogg(row)" color="warn" >
+                        <mat-icon>delete</mat-icon>
+                    </button>  
+                </td>
+              </ng-container>
+          
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          
+              <!-- Row shown when there is no matching data. -->
+              <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+              </tr>
+            </table>
+          
+            <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+          </div>
+
+    </div>
+
+    </div>
+    
+
+    

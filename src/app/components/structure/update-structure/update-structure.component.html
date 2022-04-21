@@ -1,0 +1,52 @@
+<h1 mat-dialog-title>Modification d'un structure centrale</h1>
+<br>
+<div mat-dialog-content>
+<form #enregForm="ngForm"  >
+
+    <mat-form-field  appearance="outline">
+        <mat-label  for="code" >Code structure: </mat-label>
+        <input formConroleName="code"  matInput type="text" placeholder="" id="code"  name="codeStructure" [(ngModel)]="data.structure.code"  required #code="ngModel"           
+        [class.is-invalid]="code.invalid && code.touched"   >
+        <small class="text-danger" [class.d-none]="code.valid || code.untouched">Code is required field</small> 
+        </mat-form-field>
+        
+        
+        <mat-form-field  appearance="outline">
+          <mat-label for="libelle">Libellé structure: </mat-label>
+           <input formConroleName="libelle" matInput type="text" name="libelleStructure" id="libelle" placeholder="" [(ngModel)]="data.structure.libelle"  required pattern="^[a-zA-Z]+[a-zA-Z ]*$" #libelle="ngModel"           
+           [class.is-invalid]="libelle.invalid && libelle.touched"   >
+           <small class="text-danger" [class.d-none]="libelle.valid || libelle.untouched">Libellé structure is required field</small> 
+          </mat-form-field>
+        
+        <mat-form-field appearance="outline">
+            <mat-label>Lieu d'archivage 1ere age </mat-label>
+            <mat-select placeholder="" name="lieu1"  [(value)]="selectedId1" [(ngModel)]="data.structure.lieu_archivage1ereAge.id" required #lieu_archivage1ereAge="ngModel"
+             [class.is-invalid]="lieu_archivage1ereAge.invalid && lieu_archivage1ereAge.touched">
+             <mat-option *ngFor="let lieu of lieux" value="{{lieu.id}}" >{{lieu.lieu}}</mat-option >
+            </mat-select>
+            <!--<p>{{data.structure.lieu_archivage1ereAge.id}}</p>-->
+            <small class="text-danger" [class.d-none]="lieu_archivage1ereAge.valid || 
+            lieu_archivage1ereAge.untouched">veuiller choisir un lieu</small> 
+          </mat-form-field>
+        
+          <mat-form-field appearance="outline">
+            <mat-label>Lieu d'archivage 2eme age </mat-label>
+            <mat-select placeholder="" name="lieu" [(ngModel)]="data.structure.lieu_archivage2emeAge.id" 
+            required #lieu_archivage2emeAge="ngModel" [class.is-invalid]="lieu_archivage2emeAge.invalid && lieu_archivage2emeAge.touched" >
+            <mat-option *ngFor="let lieu of lieux" value="{{lieu.id}}">{{lieu.lieu}}</mat-option >
+            </mat-select>
+            <small class="text-danger" [class.d-none]="lieu_archivage2emeAge.valid || lieu_archivage2emeAge.untouched">veuiller choisir un lieu</small> 
+          </mat-form-field>
+        
+        <div mat-dialog-actions [align]="'end'">
+          <button  class="btn" mat-dialog-close (click)="retour()" > Retour </button> 
+          <button mat-raised-button [disabled]="enregForm.form.invalid" color="Success"  (click)="opensweetalert()" >Valider</button>
+          
+        </div>
+        <br><br>
+ 
+</form>
+
+
+
+

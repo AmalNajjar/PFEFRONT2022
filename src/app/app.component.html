@@ -1,0 +1,4 @@
+<router-outlet *ngIf="connected; else notConnected"></router-outlet>
+<ng-template #notConnected>
+    <router-outlet></router-outlet>
+</ng-template>

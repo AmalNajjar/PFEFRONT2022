@@ -1,0 +1,33 @@
+<div class="full-height full-width" fxLayout="row" fxLayoutAlign="center center">
+  <ng-container *ngIf="signupForm; else loading">
+    <form [formGroup]="signupForm" fxFlex="60" class="full-height" fxLayout="column" fxLayoutAlign="center start">
+      <div><h2>Créer un compte</h2></div>
+      <label>Nom d'utilisateur</label>
+      <mat-form-field class="full-width" style="margin-bottom: -10px" appearance="outline">
+        <input type="text" formControlName="username" matInput required>
+        <mat-error *ngIf="errorMessage('username')">
+          {{errorMessage('username')}}
+        </mat-error>
+      </mat-form-field>
+      <label>Adresse e-mail</label>
+      <mat-form-field class="full-width" style="margin-bottom: -10px" appearance="outline">
+        <input type="email" formControlName="email" matInput required>
+        <mat-error *ngIf="errorMessage('email', true)">
+          {{errorMessage('email', true)}}
+        </mat-error>
+      </mat-form-field>
+      <label>Mot de passe</label>
+      <mat-form-field class="full-width" style="margin-bottom: -10px" appearance="outline">
+        <input type="password" formControlName="password" matInput required>
+        <mat-error *ngIf="errorMessage('password')">
+          {{errorMessage('password')}}
+        </mat-error>
+      </mat-form-field>
+      <button (click)="signup()" class="full-width border-radius-10" mat-flat-button color="primary">S'inscrire</button>
+      <small>Vous avez déjà un compte ? <a routerLink="/" color="primary">Se connecter</a> </small>
+    </form>
+  </ng-container>
+  <ng-template #loading>
+    <mat-spinner></mat-spinner>
+  </ng-template>
+</div>

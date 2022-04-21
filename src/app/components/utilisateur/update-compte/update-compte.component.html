@@ -1,0 +1,60 @@
+<h1 mat-dialog-title >Modification d'un compte utilisateur</h1>
+<br>
+<br>
+<div mat-dialog-content>
+<form #enregForm="ngForm">
+
+
+<mat-form-field  appearance="outline">
+<mat-label  for="nom" >Nom: </mat-label>
+<input  matInput type="text" id="nom"  name="nom" placeholder="" [(ngModel)]="data.compte.nom"  required pattern="^[a-zA-Z]+[a-zA-Z ]*$" #nom="ngModel"           
+[class.is-invalid]="nom.invalid && nom.touched"   >
+<small class="text-danger" [class.d-none]="nom.valid || nom.untouched">Nom is required field</small> 
+</mat-form-field>
+
+
+<mat-form-field  appearance="outline">
+<mat-label for="prenom" >Prénom: </mat-label>
+   <input matInput type="text" id="prenom"  name="prenom" placeholder="" [(ngModel)]="data.compte.prenom"  required pattern="^[a-zA-Z]+[a-zA-Z ]*$" #prenom="ngModel"           
+[class.is-invalid]="prenom.invalid && prenom.touched"   >
+<small class="text-danger" [class.d-none]="prenom.valid || prenom.untouched">Prénom is required field</small> 
+</mat-form-field>
+
+<mat-form-field  appearance="outline">
+  <mat-label for="password">Mot de Passe: </mat-label>
+   <input  matInput type="text" name="password" id="password" placeholder="" [(ngModel)]="data.compte.password"  required #password="ngModel"           
+   [class.is-invalid]="password.invalid && password.touched"   >
+   <small class="text-danger" [class.d-none]="password.valid || password.untouched">Mot de passe is required field</small> 
+  </mat-form-field>
+
+
+
+<mat-form-field  appearance="outline">
+<mat-label for="email">Adresse e-mail: </mat-label>
+<input matInput  type="email"  name="email" id="email" placeholder="" [(ngModel)]="data.compte.email" required pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" 
+#email="ngModel" [class.is-invalid]="email.invalid && email.touched"/>
+ <div *ngIf="email.errors && (email.invalid && email.touched)">
+   <small class="text-danger" *ngIf="email.errors['required']">Email is required field</small>
+   <small class="text-danger" *ngIf="email.errors['pattern']"> Entrer the valid Email</small>
+ </div>
+</mat-form-field>
+
+<mat-form-field  appearance="outline">
+<mat-label for="direction">Libellé direction:</mat-label>
+<mat-select required #direction="ngModel" [class.is-invalid]="direction.invalid && direction.touched" name="direction" [(ngModel)]="data.compte.direction">
+    <mat-option value="Direction Regionale" >Direction Regionale</mat-option>
+    <mat-option value="Direction Centrale" selected>Direction Centrale</mat-option>
+    <mat-option value="Agence">Agence</mat-option>
+</mat-select>
+<small class="text-danger" [class.d-none]="direction.valid || direction.untouched">Please choose a direction</small> 
+</mat-form-field>
+
+<div mat-dialog-actions [align]="'end'">
+  <button  class="btn" mat-dialog-close (click)="retour()"> Retour </button>
+  <button mat-raised-button [disabled]="enregForm.form.invalid" color="Success" (click) ="opensweetalert()">Valider</button> 
+</div>
+<br><br>
+</form>
+
+
+

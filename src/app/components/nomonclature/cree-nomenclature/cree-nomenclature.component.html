@@ -1,0 +1,55 @@
+<h1 mat-dialog-title>Création d'une nouvelle Nomenclature</h1>
+<br>
+<div mat-dialog-content>
+<form #enregForm="ngForm" (ngSubmit)="onSubmit()">
+
+
+
+<mat-form-field  appearance="outline">
+<mat-label  for="code_Nomenclature" >Code Nomenclature: </mat-label>
+<input formConroleName="code_Nomenclature" matInput placeholder="" type="number" id="code_Nomenclature" 
+ name="code" [(ngModel)]="nomenclature.code_Nomenclature"  required #code_Nomenclature="ngModel"           
+[class.is-invalid]="code_Nomenclature.invalid &&code_Nomenclature.touched"   >
+<small class="text-danger" [class.d-none]="code_Nomenclature.valid || code_Nomenclature.untouched">Code Nomenclature is required field</small> 
+</mat-form-field>
+
+<mat-form-field  appearance="outline">
+    <mat-label  for="designation_Nomenclature" >Désignation Nomenclature: </mat-label>
+    <input formConroleName="designation_Nomenclature" matInput placeholder="" type="text" id="designation_Nomenclature" 
+     name="designation" [(ngModel)]="nomenclature.designation_Nomenclature"  required #designation_Nomenclature="ngModel"           
+    [class.is-invalid]="designation_Nomenclature.invalid &&designation_Nomenclature.touched"   >
+    <small class="text-danger" [class.d-none]="designation_Nomenclature.valid || designation_Nomenclature.untouched">Désignation Nomenclature is required field</small> 
+    </mat-form-field>
+
+    <mat-form-field  appearance="outline">
+        <mat-label  for="dureeConservation_1ereAge" >Durée Conservation 1ere Age: </mat-label>
+        <input formConroleName="dureeConservation_1ereAge" matInput placeholder="" type="text" id="dureeConservation_1ereAge" 
+         name="duree" [(ngModel)]="nomenclature.dureeConservation_1ereAge"  required #dureeConservation_1ereAge="ngModel"           
+        [class.is-invalid]="dureeConservation_1ereAge.invalid &&dureeConservation_1ereAge.touched"   >
+        <small class="text-danger" [class.d-none]="dureeConservation_1ereAge.valid || dureeConservation_1ereAge.untouched">Durée Conservation 1ere Age is required field</small> 
+     </mat-form-field>
+
+        <mat-form-field  appearance="outline">
+            <mat-label  for="dureeConservation_2emeAge" >Durée Conservation 2eme Age: </mat-label>
+            <input formConroleName="dureeConservation_2emeAge" matInput placeholder="" type="text" id="dureeConservation_2emeAge" 
+             name="duree2" [(ngModel)]="nomenclature.dureeConservation_2emeAge"  required #dureeConservation_2emeAge="ngModel"           
+            [class.is-invalid]="dureeConservation_2emeAge.invalid && dureeConservation_2emeAge.touched"   >
+            <small class="text-danger" [class.d-none]="dureeConservation_2emeAge.valid ||dureeConservation_2emeAge.untouched">Durée Conservation 2eme Age is required field</small> 
+</mat-form-field>
+
+<mat-form-field  appearance="outline">
+    <mat-label  for="valeurHistorique_3emeAge" >Valeur Historique 3eme Age: </mat-label>
+    <input formConroleName="valeurHistorique_3emeAge" matInput placeholder="" type="text" id="valeurHistorique_3emeAge" 
+     name="valeur" [(ngModel)]="nomenclature.valeurHistorique_3emeAge"  required #valeurHistorique_3emeAge="ngModel"           
+    [class.is-invalid]="valeurHistorique_3emeAge.invalid && valeurHistorique_3emeAge.touched"   >
+    <small class="text-danger" [class.d-none]="valeurHistorique_3emeAge.valid ||valeurHistorique_3emeAge.untouched">Valeur Historique 3eme Age is required field</small> 
+</mat-form-field>
+<div mat-dialog-actions [align]="'end'">
+    <button  class="btn" mat-dialog-close (click)="retour()" > Retour </button>
+    
+    <button mat-raised-button [disabled]="enregForm.form.invalid" color="Success" type="Submit" (click) ="opensweetalert()"  >Créer</button>
+    
+  </div>
+  <br><br>
+   
+  </form>

@@ -1,0 +1,207 @@
+.sidenav-container {
+  height: 100%;
+  
+
+}
+
+.sidenav {
+  width: 330px;
+  background: #34469e;
+}
+
+.mat-list-item{
+  margin: 0 0px 15px;
+
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+  
+}
+
+.mat-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: white;
+  height: 71px;
+}
+.mat-list-item{
+  height: 50px;
+  width:15px;
+  
+}
+.centre{
+margin-left: 20px;
+margin-right: 510px;
+font-size: 25px;
+color: #082096;
+}
+
+img{
+  margin-left:540px;
+  margin-top:5px
+}
+
+mat-icon{
+  margin-right: 9px; 
+  color: white;
+  font-size: 29px;
+}
+
+span{
+  margin-top:15px
+}
+
+
+/*
+mat-toolbar {
+  background: #004a9f;
+  color: white;
+}
+
+mat-sidenav {
+  margin: 16px;
+  width: 320px;
+  border-right: none;
+  background: #002b5c;
+  color: white;
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+}
+
+.content {
+  height: calc(100vh - 130px);
+  border-radius: 10px;
+  margin: 16px;
+  margin-left: 32px;
+
+  padding: 16px;
+
+  overflow: auto;
+}
+
+mat-sidenav-container {
+  height: calc(100vh - 65px);
+}
+
+
+
+.avatar {
+  margin-top: 16px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.name {
+  margin-top: 8px;
+  font-weight: normal;
+  font-size: 1.3rem;
+}
+
+
+
+mat-divider {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+
+.mat-list-item{
+  margin: 0 0px 15px;
+  height: 50px;
+  
+   width: 200%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  
+ 
+
+  font-weight: normal;
+  margin-top: 2px;
+  font-size:1rem;
+  color: lightgrey;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+  
+}
+
+
+
+  .centre{
+    margin-left: 730px;
+    margin-right: 510px;
+    font-size: 23px;
+    }
+
+
+img{
+  margin-right: 5px;
+}
+
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*.sidenav-container {
+  height: 100%;
+  
+
+}
+
+.sidenav {
+  width: 340px;
+  background: #6378db;
+}
+
+.mat-list-item{
+  margin: 0 0px 15px;
+
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+  
+}
+
+.mat-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: #6378db;
+}
+.mat-list-item{
+  height: 50px;
+  width:15px;
+  
+}
+.centre{
+margin-left: 600px;
+margin-right: 510px;
+font-size: 23px;
+}*/

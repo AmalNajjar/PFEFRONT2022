@@ -1,0 +1,154 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar >     
+     <mat-icon style="margin-left:90px; font-size: 115px;" >person</mat-icon>     
+    </mat-toolbar>
+<br><br>
+    <mat-toolbar-row> 
+      <span style="margin-top:4px; font-size: 27px; margin-left:60px; color: white;">Administrateur</span>
+    </mat-toolbar-row>  
+  <hr>
+    <mat-nav-list>
+      <a mat-list-item routerLink="dashboard"> 
+      
+        <mat-icon >home</mat-icon>
+      <span style=" color: white;">Tableau de bord</span></a>
+  
+
+      <a mat-list-item routerLink="gestion-parametrages"> 
+        <mat-icon>people</mat-icon>
+        <span style=" color: white;">les Comptes Utilisateurs</span></a>
+    
+      <a mat-list-item  routerLink="gestionDirection">
+        <mat-icon >account_balance</mat-icon>
+        <span style="  color: white;" >les Directions Regionales</span></a>
+     
+        <a mat-list-item routerLink="gestion-structure">
+       <mat-icon >account_balance</mat-icon>
+        <span style=" color: white;;"> les Structures Centrales</span></a>
+     
+        <a mat-list-item routerLink="gestionAgence">
+       <mat-icon >business</mat-icon>
+        <span style="  color: white;">les Agences</span></a>
+     
+        <a mat-list-item routerLink="gestionNomenclature">
+          <mat-icon >description</mat-icon>
+        <span style=" color: white;">la nomanclature</span></a>
+     
+        <a mat-list-item routerLink="/">
+      <mat-icon >input</mat-icon>
+       <span style=" color: white;">Déconnexion</span></a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar >
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <div class="imggg">
+      <img
+      width="80"
+      src="data:image/png;base64,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"
+     />
+      <span class="centre">Banque Extérieure d'Algérie(BEA)</span>
+    </div>
+    </mat-toolbar>
+    <ng-content></ng-content>
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+
+<!--mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport
+        [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+        [mode]="(isHandset$ | async) ? 'over' : 'side'"
+        [opened]="(isHandset$ | async) === false">
+      <mat-toolbar>
+       <img
+        width="40"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOKs1LAWQFQXQHFCJthgpBeR6U5Bbyoyr68Q&usqp=CAU"
+       />
+       Administrateur  </mat-toolbar>
+      <mat-toolbar-row> 
+        <p> <strong><span style=" color:#32CD32;">*</span></strong>
+        <span style=" color:#747070;">En ligne</span>
+       </p>
+      </mat-toolbar-row>  
+    <hr>
+      <mat-nav-list>
+        <a matlist-item ="['dashboard']"> 
+          <img
+          width="30"
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAhFBMVEX///8yMjINDQ0AAAAuLi4XFxclJSUSEhIfHx8iIiIrKyuGhobg4OCsrKz09PQoKCgbGxtpaWm8vLwICAjs7Oz4+PjJycl3d3eSkpLk5OS0tLR+fn7Dw8NTU1Nubm7T09Ojo6NkZGRDQ0M3Nzebm5s/Pz9cXFxLS0uOjo5RUVGfn5/X19cG3vwMAAAJcUlEQVR4nO2d6XqiMBSGK2EJuJCquC9oW7X1/u9vAAUh4QBRAjjP+X6OlMlHXpKTk4WPDxQKhUKhUCgUCoVCoVAoFAqFQqFQKBQKhUKhUCgUCtWKvOtq6A8307bLoUrjT43c9HUZtF0YBdp8ETLRbgpMfv5vFel9EqKlNCFk2HaZatWVxv6suwKPO6/tYtUnP65Ay2A0EjMMi3z9L29jQOjk7o+arqMHchzXZgYhq7bLVosGFkn8OXovlu6YzCK7tktXg4Z3Qi1mp/zdPFKD/Lw7qd4uJpSZWX+hgmokk/cmdeAmhLqRQZdSO+VUd6lG1m2X8gWlCb0Zmm/2q62dJtUOSF22XdAnJRBq/uyjH/6YzpE6brmoz+na4whlu9H9p33P5Ujtt1rU5yQQSv3Hj6MDTTc4QZt6fLc4VSDUvRMa65typJJNS0V9TtcvjlCaEBpr9pUl1SKXVor6nARCNV+8aHSiGYsG2b4LqSKhX/vcC7Ok2gGps5y77cdZ7XkaGtegnNBYs580qWZA6oK7YromonbtRnoCoZYPXzw98KSeMk9jbyR5gczouc3+c84T2ssnNNbCyJBqEC11/TKbGEh5zMG5GYmEfpa9Ndk21WQa+U5++yGZvMBDRG8pP7DiCWV/5X8kknq4P5UryeQFUmItcboWCK0Gk0CqfSP1m9yelutEiYGHHNdqY0AiEnqo2q7PejypfvjPOxIadMVxZfDwDuqMQBIIpd/lfxSLJ9UiBy9yCBjsOZ/qnAASCP2Sa+4WLF3+gFT9Gjo07FyDzTtc/vCEnmQjj43pZEidkNWcBFWYa7Bxh2OBUD42qaDRKT32D0mdaBZ1uuDQe5XQWItsnGpYgcN8SJt1uDwKhD47Rti4qSoL86nQa9iow4RQI+7lYUKnq/5hu/uGa3i6zZLK2ncoQ+jslIwOLmAtZ0k1nbYdShAajBqTMHpCJuDc2sZJt6mAwcYcCm2oARI66HHzh3PoyuWWAraadygRhw6T+TXLCGRZWsHc2gVqQRt2mNPLg29XMmoMxgm2aZo2DefWwPFBhtTWHI6tbBvag9vQ1NtquvHowGYWnAdenkpIbcBhP3kFb4Q6JkjoOHd+LRoJnsFavxjtOpzyhNowof2YUMrNr+lmfnbtpnEhqaodjrXKhE7P3LNIW3RzsmuJlunev2GHAqE2mJHfWNn+RLBokC00CvEuWjsOp3wvb8O56gX3LMSS2oxMwGzc2IVIVelww8ehFJxvmG5hQpNqNKlGwHwVSKpCh32ul3cckNA95d7WfItxzgL4//LbVGUOhXaDbsEZ6r8yQpPS2gZxrtBtxrmDYFUOBUIZSKh3uFd2AaFJNYY5CzAUX/7mkKrI4YUnVAfjrqtZhdDEYkgqvHioz4S/UOJQaDdsmNDH9IxZwWDvRiq8eEhsUx0F+dJZqpePDBrw6oJkArGc0KQawwAHXDy0PPOkurWvF1tUJ3SpJ5UNDdHzLIakwrn6NR+Km/WuF5MhlE9+V7YYknqGb8vHqS6rcb3YxuAItWBC+WGxhMIlGRqMxpEj1a5vvdiCazccByyGMOiQUsmSDI5Ul9W0CkeGUD5xI20xXDz0CxY7S2rYOGk1TAbPjEe7Ed24oA29VA1jYIWkUrDYg7OZtugWxbRVJRBKQUJHFQLtcnET3Zy8eTpOjar8tZ5x+ssT+gsSOiMyYUyBRXFJRlqrTO8fVrkNxrTlEnp5ChP6/TqhSbGDQaMNDhoHmd7/Ng/3rEGBUBO81ehQB6GZYvvQ/+XN03Fq1P4+t3gzeK0mmUKbR5DQq10PoZlif4KDxlUmZRxGCs90G3vCEwr3r9KBdrnCYlMwLuPa1MKkHaRvrtC6CxLq7e4Z+1oITRW74AXz1hypBe1v/g1O3PjVhFebL3vPBNoVLIakgvM3H0MrveZfttvY8/nQAkJX9RMaKyS1B75gg6OZuZYRs/JogyfUKSB0LT8UlLAYvmBghMGRWr3bCAiNX6v7JoIz+GyEGdKaVdIVDNPbGkoGmA/tbS4OZXOw1d68GGhXUPiCncEA5/qTJbXo2lgCoXAvL+RO1VgsXMfP9f7l3UYcmjza0DMY9AkxqyJFWXF4fcdQ2EdV1G08NmLde/kCQmes3jCmwGJxKM6RGlwLZxpH3ESRXpAJKZ1zqVNhV8DAUNzbMe5asBftk6qEjk7NEBorGjTCY10//ZTDlxEquDFJhyZsDYKx52lWbzEkFdzV8LFP9/66Cz4MkibUgvfL/6kLY2BFa07BjnmUIZVBjU243DHeKngEbyYz51KniudvPvxUm2r7wEVzohlmWRv62Faoug0VLEahOFiwFKkG1CotiRbFMTqFHxW/JaZRFW+pTUg14TmNDbEcXac/cGpnDi0daUZ6YSj+4TNX1x0Grn0INO2fj9s/EITUhoOG2lDBYnF4PVifj6eyI0UKttu8mtGuRVF4XZCVeWW7UCOBdgWLNSXzRV2aDWNgReH1C1lgSMsOEBrLoeRUv0OfdIDQWI5N6t8zHIXlrRMaSyf175QNHTYexsCylDgE9+i0IEOJQ2ibVRtS4rBLVajKYTdamUjoEB2iw/aFDtEhOmxf6BAdosP2hQ4bdui4tiBwq/37OdSpfuj7Q17f8zN9YUTdIYfsvALSYt5+/fyYujMOHadwmdLyIG5pei+HdulBPH7BZt83cGhX2GE2Nsvv01mH7qnKRNDqKVA74VCHV05m7/wMqJ1wSKsuof96oo3ugkP9WPXWq+ITIjrr0K78AYtRT75b7IJDWv3EtrV8Y9MBh7rEHOaYSFdiBxy6Ekc7Dwh0pleXHYIrr3I0ZUy2ErvgUOJLOSPTkp08fzuHmmy89HYOJ7KYvqFDydHw+zk0/n+HkoModIgO0SE6RIfoEB2iQ3SIDtEhOkSH6BAdokN0iA7RYWcdLrrlkNX/lWS/Ww7N+r/VOeuUQ/1c/wcQR51y6MLHnD2vX9Ihh5VXssjIJ1IrCRVTquLTwVO5OT6lDpVAGp7yLDMDptQhU7AdPywHkSmFSoemmioMT26RaGoUOtQdZR+u/pRYgKbQoaHuQ/Ne3qcmGnfIfGUGw5N3K1tU5hA85qoeeZ9VF9kpclh0wlNN8iuuC1HjkB6LP2Rei6Y7u8oSLQUOHbvnq3KV1eByprbpFqvgRDtBI4MQo+SGJnVPQ2W9hCDvOrz0SyRx0JHXX6/LbrcY1z/mRaFQKBQKhUKhUCgUCoXqkP4BT0zUcqL0WZUAAAAASUVORK5CYII="
+          /> 
+        Tableau de bord</a>
+  
+  
+  
+        <a matlist-item ="['compte-utilisateur']"> 
+          <img
+          width="30"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0iFTsRagcxqIHDkchvDQWFnLWswn_q6IUEGQTJBNlMofExPFGLNY3z6YsAWs0ytM86bM&usqp=CAU"
+          /> 
+        les Comptes Utilisateurs</a>
+      
+        <a mat-list-item href="#">
+          <img
+          width="33"
+          src="https://img.freepik.com/vecteurs-libre/dessin-anime-retro-banque-palais-justice-illustration-colonnes-isolee-blanc_53562-8133.jpg"
+         />
+          les Directions Regionales</a>
+        <a mat-list-item href="#">
+          <img
+          width="30"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP4z51pNzWVmDY5pj0vrXY6PXsFl_AzWvNsxlc6jbyYa2i1NTHPfr_iwWdzHcWa74gSqo&usqp=CAU"
+         />
+          les Structures Centrales</a>
+        <a mat-list-item href="#">
+          <img
+          width="30"
+          src="https://bankeo.info/wp-content/uploads/2014/09/Banque-Bank.png"
+         />
+          les Agences</a>
+        <a mat-list-item href="#">
+          <img
+          width="30"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT06TOQpdWeKAzyZVm7h0D0CvfPtZFo9PhrkCPoNSeci8fayCv5qf-8IUroPh0b9rOEu-A&usqp=CAU"
+         />
+          la nomanclature</a>
+        <a mat-list-item href="#">
+          <img
+          width="22"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAJgDyOV_p4gOVRf4ReIlhOsSEEiGLwYdxwH8xIFGBLWHRlDiD5I8b2bwL9Paek-ZwUZg&usqp=CAU"
+         />
+          Déconnexion</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar color="primary">
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()"
+          *ngIf="isHandset$ | async">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+      
+       
+        <span class="centre">BANQUE EXTÉRIEUR D'ALGÉRIE(BEA)</span>
+      </mat-toolbar>
+      <ng-content></ng-content>
+      <!-- Add Content Here >
+    </mat-sidenav-content>
+  </mat-sidenav-container-->

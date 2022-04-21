@@ -1,0 +1,27 @@
+h1 {
+    color: #267ace;
+    font-size: 33px;
+    margin-top: 5px;
+
+  }
+
+
+  mat-label{
+   
+    font-size: 20px;
+    
+   }
+
+.btn-primary{
+    margin-left: 580px;
+    width: 130px;
+    height: 39px;
+}
+
+  .btn {
+    background-color: #6a9ce6;
+    width: 78px ;
+    height: 43px;
+    margin: 0 10px 0px;
+    font-size: 15px;
+  }

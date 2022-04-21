@@ -1,0 +1,54 @@
+<h1 mat-dialog-title>Modification d'un nouveau Document</h1>
+<br>
+<div mat-dialog-content>
+<form #enregForm="ngForm" (ngSubmit)="onSubmit()">
+
+
+
+<mat-form-field  appearance="outline">
+<mat-label  for="chapitre_comptable" >Chapitre Comptable: </mat-label>
+<input formConroleName="chapitre_comptable" matInput placeholder="" type="text" id="chapitre_comptable" 
+ name="chapitre" [(ngModel)]="suividocument.chapitre_comptable"  required #chapitre_comptable="ngModel"           
+[class.is-invalid]="chapitre_comptable.invalid &&chapitre_comptable.touched"   >
+<small class="text-danger" [class.d-none]="chapitre_comptable.valid || chapitre_comptable.untouched">Chapitre Comptable is required field</small> 
+</mat-form-field>
+
+    <mat-form-field  appearance="outline">
+        <mat-label  for="nombre_De_documents" >Numero Document: </mat-label>
+        <input formConroleName="nombre_De_pages" matInput placeholder="" type="number" id="nombre_De_pages" 
+         name="nombr" [(ngModel)]="suividocument.nombre_De_pages"  required #nombre_De_pages="ngModel"           
+        [class.is-invalid]="nombre_De_pages.invalid &&nombre_De_pages.touched"   >
+        <small class="text-danger" [class.d-none]="nombre_De_pages.valid || nombre_De_pages.untouched">Nombre de page is required field</small> 
+        </mat-form-field>
+    <!------------
+    -->
+ 
+
+    <mat-form-field  appearance="outline">
+        <mat-label  for="date_De_creation_Du_Document" >Date de creation Du Document: </mat-label>
+        <input formConroleName="date_De_creation_Du_Document" matInput placeholder="" type="date" id="date_d_entree_Du_Document" 
+         name="date" [(ngModel)]="suividocument.date_De_creation_Du_Document"  required #date_De_creation_Du_Document="ngModel"           
+        [class.is-invalid]="date_De_creation_Du_Document.invalid &&date_De_creation_Du_Document.touched"   >
+        <small class="text-danger" [class.d-none]="date_De_creation_Du_Document.valid || date_De_creation_Du_Document.untouched">Date de creation Du Document is required field</small> 
+        </mat-form-field>
+        <!------------------
+        -->
+      
+
+            <!--mat-form-field  appearance="outline">
+                <mat-label  for=" libelleDirection" > libelle Direction: </mat-label>
+                <input formConroleName=" libelleDirection" matInput placeholder="" type="text" id=" libelleDirection" 
+                 name="libele" [(ngModel)]="suividocument.libelleDirection"  required #libelleDirection="ngModel"           
+                [class.is-invalid]=" libelleDirection.invalid && libelleDirection.touched"   >
+                <small class="text-danger" [class.d-none]=" libelleDirection.valid ||  libelleDirection.untouched">Libelle Direction 1ere age is required field</small> 
+                </mat-form-field-->
+    
+            <div mat-dialog-actions [align]="'end'">
+                <button  class="btn" mat-dialog-close (click)="retour()" > Retour </button>
+                
+                <button mat-raised-button [disabled]="enregForm.form.invalid" color="Success" type="Submit" (click) ="opensweetalert()"  >Modifier</button>
+                
+              </div>
+              <br><br>
+</form>
+</div>              

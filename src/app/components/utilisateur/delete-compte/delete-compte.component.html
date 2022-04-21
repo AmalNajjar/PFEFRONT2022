@@ -1,0 +1,33 @@
+    <h1 mat-dialog-title >Suppression d'un compte utilisateur</h1>
+    <h2 > Êtes-vous sûre de supprimer ce compte utilisateur? </h2>
+<br><br>
+<div mat-dialog-content style="font-size: 18px">
+  <form #enregForm="ngForm" >
+  
+        <mat-label ><b>Id: </b>    </mat-label> {{data.compte.id}} 
+        <br>
+        <br>
+        <mat-label > <b>Nom:</b> </mat-label> {{data.compte.nom}}
+        <br>
+        <br>
+        <mat-label><b>Prenom:</b></mat-label> {{data.compte.prenom}}
+      <br>
+      <br>
+      <mat-label><b>Mot de passe:</b></mat-label> {{data.compte.password}}
+      <br>
+      <br>
+      <mat-label><b>Adresse e-mail:</b></mat-label> {{data.compte.email}}
+      <br>
+      <br>
+      <mat-label><b>libellé Direction:</b></mat-label> {{data.compte.direction}}
+
+   
+  
+  <div mat-dialog-actions [align]="'end'">
+    <button  class="btn" mat-dialog-close (click)="return()" > Retour </button>
+    <button mat-raised-button color="warn" type="Submit" (click)="deleteCompte(data.compte.id)"  >Supprimer</button>
+    
+  </div>
+  <br><br>
+</form>
+

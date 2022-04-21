@@ -1,0 +1,184 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
+    ">
+    <br>
+    
+    <a class="btn btn-success"  role="button"  (click)="openDialog() ">+ Créer</a>
+    
+    <br>
+    <div class="container">
+        <div style="margin-top:10px;">
+            <mat-form-field appearance="standard">
+                <mat-label>Filter</mat-label>
+                <input matInput (keyup)="applyFilter($event)" placeholder="" #input>
+              </mat-form-field>
+              
+              <div class="mat-elevation-z8">
+                <table mat-table [dataSource]="dataSource" matSort>
+                <ng-container matColumnDef="id">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header="id" >
+                   id
+                  </th>
+                  <td mat-cell *matCellDef="let suividocument">{{suividocument.id}}</td>
+                </ng-container>
+
+            
+              
+              
+                <ng-container matColumnDef="chapitre_comptable">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header="chapitre_comptable" >
+                     Chapitre Comptable
+                    </th>
+                    <td mat-cell *matCellDef="let suividocument">{{suividocument.chapitre_comptable}}</td>
+                  </ng-container>
+            
+                 <ng-container matColumnDef="nombre_De_pages">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header="nombre_De_pages">
+                     Nombre de pages
+                    </th>
+                    <td mat-cell *matCellDef="let suividocument">{{suividocument.nombre_De_pages}}</td>
+                  </ng-container>
+                  <ng-container matColumnDef="date_De_creation_Du_Document">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header="date_De_creation_Du_Document" >
+                      Date de creation du document
+                    </th>
+                    <td mat-cell *matCellDef="let suividocument">{{suividocument.date_De_creation_Du_Document}}</td>
+                  </ng-container>
+              
+
+                  <ng-container matColumnDef="libelleDirection">
+                    <th mat-header-cell *matHeaderCellDef  mat-sort-header="libelleDirection">
+                    Libelle Direction
+                    </th>
+                    <td mat-cell *matCellDef="let suividocument"> {{suividocument.libelleDirection}} </td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="designation_Nomenclature">
+                    <th mat-header-cell *matHeaderCellDef  mat-sort-header="designation_Nomenclature">
+                    Designation Nomenclature
+                    </th>
+                    <td mat-cell *matCellDef="let suividocument"> {{suividocument.designation_Nomenclature}} </td>
+                  </ng-container>
+
+
+
+
+                  <ng-container matColumnDef="action">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Actions </th>
+                    <td mat-cell *matCellDef="let row"> 
+                        <button mat-icon-button (click)="openDialoggg(row)" color="primary" >
+                            <mat-icon>search</mat-icon>
+                        </button>  
+                        <button mat-icon-button (click)="openDialogggg(row)" color="accent" >
+                            <mat-icon>edit</mat-icon>
+                        </button>  
+                         
+                    </td>
+                  </ng-container>
+                  
+                      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                  
+                      <!-- Row shown when there is no matching data. -->
+                      <tr class="mat-row" *matNoDataRow>
+                        <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                      </tr>
+                    </table>
+                  
+                    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+                  </div>
+                 
+        </div>
+    
+      </div>
+    
+     
+
+      
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <!--table matSort (matSortChange)="sortData($event)">
+  <tr>
+    <th mat-sort-header="id">Id</th>
+    <th mat-sort-header="chapitre_comptable">Chapitre Comptable</th>
+    <th mat-sort-header="nombre_De_documents">Nombre de Documents</th>
+    <th mat-sort-header="nombre_De_pages">Nombres de pages</th>
+    <th mat-sort-header="numero_document">Numero Documents</th>
+
+    <th mat-sort-header="date_d_entree_Du_Document">Date d'entre du Document</th>
+    <th mat-sort-header="date_De_creation_Du_Document">Date de creation du Documents</th>
+    <th mat-sort-header="limite_de_conservation_1ere_age">limite de conservation 1 ere age</th>
+  </tr>
+
+  <tr *ngFor="let suividocument of sortedData">
+    <td>{{suividocument.id}}</td>
+    <td>{{suividocument. chapitre_comptable}}</td>
+    <td>{{suividocument.nombre_De_documents}}</td>
+    <td>{{suividocument. nombre_De_pages}}</td>
+    <td>{{suividocument.numero_document}}</td>
+    <td>{{suividocument. date_d_entree_Du_Document}}</td>
+    <td>{{suividocument. date_De_creation_Du_Document}}</td>
+    <td>{{suividocument.limite_de_conservation_1ere_age}}</td>
+  </tr>
+</table-->

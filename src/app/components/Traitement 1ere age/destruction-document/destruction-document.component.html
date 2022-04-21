@@ -1,0 +1,82 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
+    ">
+    
+    <h1 >Tableau des documents à détruire</h1>
+    <br>
+    <div class="container">   
+          <div style="margin-top:10px;">             
+              <div class="mat-elevation-z8" >
+                <table mat-table [dataSource]="dataSource"   matSort >
+
+                <ng-container matColumnDef="id">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header="id" >
+                   Id
+                  </th>
+                  <td mat-cell *matCellDef="let suividocument">{{suividocument.id}}</td>
+                </ng-container>
+
+              
+                <ng-container matColumnDef="chapitre_comptable">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header="chapitre_comptable" >
+                     Chapitre Comptable
+                    </th>
+                    <td mat-cell *matCellDef="let suividocument">{{suividocument.chapitre_comptable}}</td>
+                  </ng-container>
+                                          
+                    <!-- Progress Column -->
+              <ng-container matColumnDef="code">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Code document </th>
+                <td mat-cell *matCellDef="let row"> {{row.code}} </td>
+              </ng-container>
+                  
+                <!-- Name Column -->
+                <ng-container matColumnDef="numero">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Numéro d'ordre</th>
+                  <td mat-cell *matCellDef="let row"> {{row.numero}} </td>
+                </ng-container>
+
+                  <ng-container matColumnDef="date_De_creation_Du_Document">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header="date_De_creation_Du_Document" >
+                      Date de creation du document
+                    </th>
+                    <td mat-cell *matCellDef="let suividocument">{{suividocument.date_De_creation_Du_Document}}</td>
+                  </ng-container>
+
+
+                  <ng-container matColumnDef="dateDestruction">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Date de destruction du document</th>
+                    <td mat-cell *matCellDef="let row"> {{row.dateDestruction}} </td>
+                  </ng-container>
+    
+                  <ng-container matColumnDef="libelle">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>libellé direction</th>
+                    <td mat-cell *matCellDef="let row"> {{row.libelle}} </td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="action">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Action &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                    <td mat-cell *matCellDef="let row"> 
+                      <button mat-icon-button color="accent" >
+                        <a  class="btn btn-info"  role="button" (click)="openDialog()"  ><mat-icon>edit</mat-icon>Ajouter la date de destruction</a>
+                        </button>   
+                      </td>
+                    </ng-container>
+                  
+                      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                  
+                      <!-- Row shown when there is no matching data. -->
+                   
+                </table>
+                  
+             
+                  </div>
+                 
+        </div>
+    
+      </div>
+      <br><br><br><br><br><br><br><br><br><br><br><br>
+      <br><br>

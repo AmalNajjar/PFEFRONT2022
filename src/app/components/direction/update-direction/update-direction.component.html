@@ -1,0 +1,181 @@
+<h1 mat-dialog-title>Modification d'une Direction Régionale</h1>
+<br>
+<div mat-dialog-content>
+<form #enregForm="ngForm" >
+
+<mat-form-field  appearance="outline">
+<mat-label  for="codedirection" >Code direction: </mat-label>
+<input  matInput placeholder="" type="text" id="codedirection"  name="code" [(ngModel)]="data.direction.codedirection"  required #codedirection="ngModel"           
+[class.is-invalid]="codedirection.invalid &&codedirection.touched"   >
+<small class="text-danger" [class.d-none]="codedirection.valid || codedirection.untouched">Code Direction is required field</small> 
+</mat-form-field>
+
+
+<mat-form-field  appearance="outline">
+<mat-label for="libelleDirection" >Libellé Direction: </mat-label> 
+<input  matInput placeholder="" type="text" id="libelleDirection"  name="libelle"  pattern="^[a-zA-Z]+[a-zA-Z ]*$" [(ngModel)]="data.direction.libelleDirection"   required #libelleDirection="ngModel"           
+[class.is-invalid]="libelleDirection.invalid && libelleDirection.touched"   >
+<small class="text-danger" [class.d-none]="libelleDirection.valid || libelleDirection.untouched">Libellé Direction is required field</small> 
+</mat-form-field>
+
+
+
+<mat-form-field  appearance="outline">
+  <mat-label for="typedirection">Type Direction:</mat-label>
+  <mat-select required #typedirection="ngModel" [class.is-invalid]="typedirection.invalid 
+  &&typedirection.touched" name="type" [(ngModel)]="data.direction.typedirection">
+    <mat-option value="DGA commerciale"selected> DGA commerciale</mat-option>
+    <mat-option value="DGA engagement"> DGA engagement</mat-option>
+    <mat-option value="DGA Opérations et Systèmes"> DGA Opérations et Systèmes</mat-option>
+    <mat-option value="Direction générale"> Direction générale</mat-option>
+    <mat-option value="DGA finances et développement"> DGA finances et développement</mat-option>
+  </mat-select>
+  <small class="text-danger" [class.d-none]="typedirection.valid || typedirection.untouched">Please choose a Type direction</small> 
+  </mat-form-field>
+
+
+<mat-form-field appearance="outline">
+  <mat-label>Lieu d'archivage 1ere age </mat-label>
+  <mat-select  placeholder="" name="lieu1" [(ngModel)]="data.direction.lieu_d_archivage_1_ere_age" required #lieu_d_archivage_1_ere_age="ngModel"
+   [class.is-invalid]="lieu_d_archivage_1_ere_age.invalid && lieu_d_archivage_1_ere_age.touched">
+    <mat-option value="Bureau" selected>Bureau</mat-option>
+    <mat-option value="Salles d’archives – Amirouche, Berlioz - Bouhired" >Salles d’archives – Amirouche, Berlioz - Bouhired</mat-option>
+    <mat-option value="Salle d’archives" >Salle d’archives</mat-option>
+    <mat-option value="Bab El -Oued" >Bab El -Oued</mat-option>
+  </mat-select>
+  <small class="text-danger" [class.d-none]="lieu_d_archivage_1_ere_age.valid || 
+lieu_d_archivage_1_ere_age.untouched">veuiller choisir un lieu</small> 
+</mat-form-field>
+<mat-form-field appearance="outline">
+  <mat-label>Lieu d'archivage 2eme age </mat-label>
+  <mat-select  placeholder="" name="lieu" [(ngModel)]="data.direction.lieu_d_archivage_2_eme_age" 
+  required #lieu_d_archivage_2_eme_age="ngModel" [class.is-invalid]="lieu_d_archivage_2_eme_age.invalid && lieu_d_archivage_2_eme_age.touched" >
+
+  <mat-option value="Rouiba EL -kenz"selected >Rouiba EL -kenz</mat-option >
+  <mat-option  value="Centre de préarchivage de Rouiba El - Kenz" >Centre de préarchivage de Rouiba El - Kenz</mat-option >
+  <mat-option  value=" Centre d’Archives de 
+  Khemis- Miliana" > Centre d’Archives de 
+  Khemis- Miliana</mat-option >
+  <mat-option  value="Bureau" >Bureau</mat-option >
+  <mat-option  value="Belcourt" >Belcourt</mat-option >
+  <mat-option  value="Maghnia" >Maghnia</mat-option >
+  <mat-option  value="Salle d’Archives" >Salle d’Archives</mat-option >
+  <mat-option  value="Hai –El –Djamel
+  SERSID" >Hai –El –Djamel
+    SERSID</mat-option >
+  <mat-option  value="Annaba-Zone Industrielle- Pont -Bouchet" >Annaba-Zone Industrielle- Pont -Bouchet</mat-option >
+  <mat-option  value="Centre d’Archives" >Centre d’Archives</mat-option >
+  <mat-option  value="Zone  Industrielle
+  Oued -Sly - Chlef" >Zone  Industrielle
+  Oued -Sly - Chlef</mat-option >
+  <mat-option value="Khemis - Miliana" >Khemis - Miliana</mat-option >
+  </mat-select>
+  <small class="text-danger" [class.d-none]="lieu_d_archivage_2_eme_age.valid || lieu_d_archivage_2_eme_age.untouched">veuiller choisir un lieu</small> 
+</mat-form-field>
+
+<div mat-dialog-actions [align]="'end'">
+  <button  class="btn" mat-dialog-close (click)="retour()" > Retour </button>
+  
+  <button mat-raised-button [disabled]="enregForm.form.invalid" color="Success" (click) ="opensweetalert()"  >Modifier</button>
+  
+</div>
+<br><br>
+ 
+</form>
+
+  <!--h1 mat-dialog-title>Modification d'une Direction Régionale:</h1>
+  <div mat-dialog-content>
+
+      <mat-form-field  appearance="outline">
+        <mat-label>Adresse e-mail</mat-label>
+        <input  matInput placeholder="" [(ngModel)]="direction.email" required pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" 
+        #email="ngModel" [class.is-invalid]="email.invalid && email.touched"/>
+         <div *ngIf="email.errors && (email.invalid && email.touched)"> 
+           <small class="text-danger" *ngIf="email.errors['required']">Email is required field</small>
+           <small class="text-danger" *ngIf="email.errors['pattern']"> Entrer the valid Email</small>
+         </div>
+        </mat-form-field>
+         <mat-form-field appearance="outline">
+         <mat-label>Mot De Passe</mat-label>
+         <input matInput placeholder=""    [(ngModel)]="direction.password"  required #password="ngModel"           
+         [class.is-invalid]="password.invalid && password.touched"   >
+         <br><br>
+         <small class="text-danger" [class.d-none]="password.valid || password.untouched">Mot de passe is required field</small> 
+        
+      </mat-form-field>
+      <!--mat-form-field appearance="outline">
+        <mat-label>Libellé Direction</mat-label>
+        <input matInput placeholder=""    [(ngModel)]="direction.libelleDirection"  required #libelleDirection="ngModel"           
+        [class.is-invalid]="libelleDirection.invalid && libelleDirection.touched"   >
+        <br><br>
+        <small class="text-danger" [class.d-none]="libelleDirection.valid ||libelleDirection.untouched">Libelle Direction is required field</small> 
+     </mat-form-field>
+  
+     <mat-form-field appearance="outline">
+      <mat-label>Code Direction</mat-label>
+      <input matInput placeholder=""     [(ngModel)]="direction.codedirection" required #codedirection="ngModel"            
+      [class.is-invalid]="codedirection.invalid && codedirection.touched"   >
+      <br><br>
+      <small class="text-danger" [class.d-none]="codedirection.valid || codedirection.untouched">Code Direction is required field</small>  
+   </mat-form-field>
+  
+   <mat-form-field appearance="outline">
+    <mat-label>Type direction</mat-label>
+    <mat-select  placeholder="" [(ngModel)]="direction.typedirection" required #typedirection="ngModel"
+     [class.is-invalid]="typedirection.invalid && typedirection.touched" >
+      <mat-option value="DGA commerciale"> DGA commerciale</mat-option>
+      <mat-option value="DGA engagement"> DGA engagement</mat-option>
+      <mat-option value="DGA Opérations et Systèmes"> DGA Opérations et Systèmes</mat-option>
+      <mat-option value="Direction générale"> Direction générale</mat-option>
+      <mat-option value="DGA finances et développement"> DGA finances et développement</mat-option>
+  </mat-select> 
+  <small class="text-danger" [class.d-none]="typedirection.valid || typedirection.untouched">veuiller choisir  type direction</small> 
+  </mat-form-field>
+  
+  <mat-form-field appearance="outline">
+    <mat-label>Lieu d'archivage 1ere age </mat-label>
+    <mat-select  placeholder=""  [(ngModel)]="direction.lieu_d_archivage_1_ere_age" required #lieu_d_archivage_1_ere_age="ngModel"
+     [class.is-invalid]="lieu_d_archivage_1_ere_age.invalid && lieu_d_archivage_1_ere_age.touched">
+      <mat-option value="Bureau" >Bureau</mat-option>
+      <mat-option value="Salles d’archives – Amirouche, Berlioz - Bouhired" >Salles d’archives – Amirouche, Berlioz - Bouhired</mat-option>
+      <mat-option value="Salle d’archives" >Salle d’archives</mat-option>
+      <mat-option value="Bab El -Oued" >Bab El -Oued</mat-option>
+    </mat-select>
+    <small class="text-danger" [class.d-none]="lieu_d_archivage_1_ere_age.valid || 
+  lieu_d_archivage_1_ere_age.untouched">veuiller choisir un lieu</small> 
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Lieu d'archivage 2eme age </mat-label>
+    <mat-select  placeholder=""  [(ngModel)]="direction.lieu_d_archivage_2_eme_age" 
+    required #lieu_d_archivage_2_eme_age="ngModel" [class.is-invalid]="lieu_d_archivage_2_eme_age.invalid && lieu_d_archivage_2_eme_age.touched" >
+  
+    <mat-option value="Rouiba EL -kenz" >Rouiba EL -kenz</mat-option >
+    <mat-option  value="Centre de préarchivage de Rouiba El - Kenz" >Centre de préarchivage de Rouiba El - Kenz</mat-option >
+    <mat-option  value=" Centre d’Archives de 
+    Khemis- Miliana" > Centre d’Archives de 
+    Khemis- Miliana</mat-option >
+    <mat-option  value="Bureau" >Bureau</mat-option >
+    <mat-option  value="Belcourt" >Belcourt</mat-option >
+    <mat-option  value="Maghnia" >Maghnia</mat-option >
+    <mat-option  value="Salle d’Archives" >Salle d’Archives</mat-option >
+    <mat-option  value="Hai –El –Djamel
+    SERSID" >Hai –El –Djamel
+      SERSID</mat-option >
+    <mat-option  value="Annaba-Zone Industrielle- Pont -Bouchet" >Annaba-Zone Industrielle- Pont -Bouchet</mat-option >
+    <mat-option  value="Centre d’Archives" >Centre d’Archives</mat-option >
+    <mat-option  value="Zone  Industrielle
+    Oued -Sly - Chlef" >Zone  Industrielle
+    Oued -Sly - Chlef</mat-option >
+    <mat-option value="Khemis - Miliana" >Khemis - Miliana</mat-option >
+    </mat-select>
+    <small class="text-danger" [class.d-none]="lieu_d_archivage_2_eme_age.valid || lieu_d_archivage_2_eme_age.untouched">veuiller choisir un lieu</small> 
+  </mat-form-field>
+  
+    
+  </div>
+  <div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close>Retour</button>
+    <button mat-raised-button color="primary"   type="Submit">Modifier</button>
+
+
+  </div-->

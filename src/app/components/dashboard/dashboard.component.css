@@ -1,0 +1,183 @@
+.grid-container {
+  margin: 5px;
+}
+
+.dashboard-card {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+}
+
+.more-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.dashboard-card-content {
+  text-align: center;
+  height: 3px;
+  width: 250px;
+  margin: 0 8px 0px;
+  padding: 16px;
+  right:-100px;
+}
+
+.header00{
+  margin-left: 33px;
+ 
+}
+
+.header0{
+  margin-left: 28px;
+}
+
+.header1{
+  margin-left: 27px;
+  margin-right: 100px;
+}
+
+.header2{
+  text-align: center;
+  margin-left: 23px;
+  margin-right: 1px;
+}
+
+.dashboard-card-content0{
+  height: 3px;
+  width: 250px;
+  margin: 0 100px 100px;
+  padding: 16px;
+  right:-200px;
+}
+
+.dashboard-card-content1{
+  text-align: center;
+  height: 370px;
+  width: 200px;
+  margin: 0 8px 16px;
+  padding: 16px;
+}
+.dashboard-card-content2{
+  text-align: center;
+  height: 90px;
+  width: 200px;
+  margin: 0 8px 16px;
+  padding: 16px;
+}
+
+.card0{
+  text-align: center;
+  height: 110px;
+  width: 380px;
+}
+
+.card01{
+  text-align: center;
+  height:110px;
+  width: 380px;
+  margin: 0 415px 1px;
+  top:-110px;
+}
+
+.card02{
+  text-align: center;
+  height: 110px;
+  width: 380px;
+  margin: 0 835px 1px;
+  top:-220px;
+}
+
+.card03{
+  text-align: center;
+  height: 110px;
+  width: 380px;
+  margin: 0 1250px 1px;
+  top:-331px;
+}
+
+.card1{
+  height: 150px;
+  width: 300px;
+  top:-290px;
+
+}
+
+.card2{
+  height: 150px;
+  width: 300px;
+  margin: 0 320px 16px;
+  top:-460px;
+}
+
+.card3{
+  height: 150px;
+  width: 300px;
+  margin: 0 640px 16px;
+  top:-645px;
+}
+
+.card000{
+  height: 445px;
+  width: 1630px;
+  top:-290px;
+}
+.dashboard-c{
+
+  width: 250px;
+  margin: 0 400px 0px;
+  padding: 16px;
+  right:-100px;
+  bottom: 1px;
+}
+
+.dashboard-d{
+  width: 250px;
+  margin: 0 650px 0px;
+  padding: 16px;
+  right:-100px;
+  bottom: 1px;
+}
+.dashboard-e{
+  width: 250px;
+  margin: 0 1280px 0px;
+  padding: 16px;
+  right:-100px;
+  bottom: 1px;
+}
+.mat-card-avatar{
+  margin-left: 130px;
+  margin-right: auto;
+}
+
+.vertical { 
+  border-left: 1px solid #888;
+  height: 100px; 
+  display: inline-block;
+  margin-left: 400px;
+  margin-right: 20px;
+  }
+
+  .myDiv{
+    text-align: center;
+    margin-left: 150px;
+    margin-right: 100px; 
+    top: -100px;
+ 
+  }
+  .myDiv1{
+    margin-left: 200px;
+    margin-right: 10px; 
+    top: 100px;
+    bottom: 100px;
+  }
+
+  
+  h2 {
+    color: #125699;
+  }
+  h1 {
+    color: #1976d2;
+  }
