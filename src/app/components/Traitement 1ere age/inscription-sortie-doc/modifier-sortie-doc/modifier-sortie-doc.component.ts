@@ -2,9 +2,10 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { SuiviDocumentService } from 'src/app/service/suivi-document.service';
-import { SuiviDocument } from 'src/app/models/suivi-document';
+
 import Swal from 'sweetalert2';
 import { Location } from '@angular/common';
+import { SuiviDocument } from 'src/app/models/suivi-document';
 @Component({
   selector: 'app-modifier-sortie-doc',
   templateUrl: './modifier-sortie-doc.component.html',

@@ -2,10 +2,11 @@ import { Injectable } from '@angular/core';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {Observable} from 'rxjs';
-
 import { Direction } from '../models/direction';
 import { LieuArchive } from '../models/lieu-archive';
 import { TypeDirection } from '../models/type-direction';
+
+
 
 
 @Injectable({
@@ -19,12 +20,12 @@ export class DirectionService {
   }            
   //baseUrl : string = "http://localhost:8083/api/test/Directions/";
   isAuth:boolean =false;
- public  getDirections() 
+ public  getDirections() :Observable<any>
  {return this.http.get<any>("http://localhost:8083/api/test/Directions");
 }
   
 
-  getDirectionById(id:number):Observable<any>{
+  getDirectionById(id:any):Observable<any>{
     return this.http.get<any>("http://localhost:8083/api/test/Directions/" + id);
   }
   

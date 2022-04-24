@@ -31,6 +31,7 @@ import { ConsulterSortieDocComponent } from './components/Traitement 1ere age/in
 import { CreeSortiedocComponent } from './components/Traitement 1ere age/inscription-sortie-doc/cree-sortiedoc/cree-sortiedoc.component';
 import { InscriptionSortieDocComponent } from './components/Traitement 1ere age/inscription-sortie-doc/inscription-sortie-doc.component';
 import { ModifierSortieDocComponent } from './components/Traitement 1ere age/inscription-sortie-doc/modifier-sortie-doc/modifier-sortie-doc.component';
+import { InventaireDocument2emeageComponent } from './components/Traitement 1ere age/inventaire-document2emeage/inventaire-document2emeage.component';
 import { ListeDemandeVersementComponent } from './components/Traitement 1ere age/liste-demande-versement/liste-demande-versement.component';
 import { TraiterDemandeComponent } from './components/Traitement 1ere age/traiter-demande/traiter-demande.component';
 import { TriDocumentComponent } from './components/Traitement 1ere age/tri-document/tri-document.component';
@@ -69,13 +70,14 @@ const routes: Routes = [
       {path:'deletenomenclature/:id',component:DeleteNomenclatureComponent},
       {path:'consulternomenclature/:id',component:ConsulterNomenclatureComponent},
       //
-      {path:'triDoc1ereage',component:TriDocumentComponent},
+     {path:'triDoc1ereage',component:TriDocumentComponent},
       {path:'creeDocument',component:CreeDocumentComponent},
       {path:'fiche/:id',component:FicheDeRenseignementComponent},
       {path:'inscriptionSortie1ere',component:InscriptionSortieDocComponent},
       {path:'creeSortie1ere',component:CreeSortiedocComponent},
       {path:'modifierSortie1ere/:id',component:ModifierSortieDocComponent},
       {path:'ConsulterSortie1ere/:id',component:ConsulterSortieDocComponent},
+      {path:'inventaire',component:InventaireDocument2emeageComponent},
       {
         path:'destruction-document/:id',
         component:DestructionDocumentComponent
@@ -143,8 +145,7 @@ const routes: Routes = [
       path:'traiter-demande',
       component:TraiterDemandeComponent
     },
-    {path:'tri-Doc1ereage',component:TriDocumentComponent},
-    {path:'cree-Document',component:CreeDocumentComponent},
+   
     ]
   },
 

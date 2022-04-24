@@ -11,15 +11,15 @@ import { Compte } from '../models/compte';
 export class RegistrationService {
 
   constructor(private _http : HttpClient) { }
-  baseUrl:string="http://localhost:8084/api/test/Comptes/";
+  baseUrl:string="http://localhost:8083/api/test/Comptes/";
 
   public registrerCompteFromRemote(compte :Compte):Observable<any>{
-    return this._http.post<any>("http://localhost:8084/api/test/Compte",compte);
+    return this._http.post<any>("http://localhost:8083/api/test/Compte",compte);
  
   }
 
   public getComptes(){
-    return this._http.get<any>("http://localhost:8084/api/test/Comptes");
+    return this._http.get<any>("http://localhost:8083/api/test/Comptes");
     
   }
 

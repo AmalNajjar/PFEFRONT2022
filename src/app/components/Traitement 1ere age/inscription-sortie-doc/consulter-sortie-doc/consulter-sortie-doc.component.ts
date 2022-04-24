@@ -1,8 +1,9 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
-import { SuiviDocumentService } from 'src/app/service/suivi-document.service';
 import { SuiviDocument } from 'src/app/models/suivi-document';
+import { SuiviDocumentService } from 'src/app/service/suivi-document.service';
+
 
 @Component({
   selector: 'app-consulter-sortie-doc',

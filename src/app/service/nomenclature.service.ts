@@ -18,7 +18,7 @@ export class NomenclatureService {
 }
   
 
-  getNomenclatureById(id:number):Observable<any>{
+  getNomenclatureById(id:any):Observable<any>{
     return this.http.get<any>("http://localhost:8083/api/test/Nomenclatures/" + id);
   }
   

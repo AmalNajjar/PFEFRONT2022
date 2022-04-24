@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { SuiviDocumentService } from 'src/app/service/suivi-document.service';
 import { SuiviDocument } from 'src/app/models/suivi-document';
+import { SuiviDocumentService } from 'src/app/service/suivi-document.service';
+
 import Swal from 'sweetalert2';
 
 @Component({

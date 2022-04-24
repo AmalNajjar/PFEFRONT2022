@@ -1,0 +1,76 @@
+<h1 mat-dialog-title>Envoyer une demande de versement</h1>
+<br>
+<div mat-dialog-content>
+<form #enregForm="ngForm" >
+
+
+
+<mat-form-field  appearance="outline">
+<mat-label  for="Numerodemande" >Numero Demande: </mat-label>
+<input  matInput placeholder="" type="number" id="num_dde" 
+ name="num" [(ngModel)]="demande.num_dde"  required #num_dde="ngModel"           
+[class.is-invalid]=" num_dde.invalid && num_dde.touched"   >
+<small class="text-danger" [class.d-none]=" num_dde.valid ||  num_dde.untouched"> Numero Demande is required field</small> 
+</mat-form-field>
+
+<mat-form-field  appearance="outline">
+    <mat-label  for=" date_dde" >Date de la demande : </mat-label>
+    <input  matInput placeholder="" type="date" id=" date_dde" 
+     name="datedde" [(ngModel)]=" demande. date_dde"  required #date_dde="ngModel"           
+    [class.is-invalid]=" date_dde.invalid && date_dde.touched"   >
+    <small class="text-danger" [class.d-none]=" date_dde.valid || date_dde.untouched">Date de la demande is required field</small> 
+    </mat-form-field>
+
+    <mat-form-field  appearance="outline">
+        <mat-label  for="objet" >Objet: </mat-label>
+        <input matInput placeholder="" type="text" id="objet" 
+         name="obj" [(ngModel)]="demande.objet"  required #objet="ngModel"           
+        [class.is-invalid]="objet.invalid &&objet.touched"   >
+        <small class="text-danger" [class.d-none]="objet.valid || objet.untouched">Objet is required field</small> 
+        </mat-form-field>
+
+        <mat-form-field  appearance="outline">
+            <mat-label  for="nbrCarton" >Nombre Carton: </mat-label>
+            <input matInput placeholder="" type="number" id="nbrCarton" 
+             name="nbr" [(ngModel)]="demande.nbrCarton"  required #nbrCarton="ngModel"           
+            [class.is-invalid]="nbrCarton.invalid &&nbrCarton.touched"   >
+            <small class="text-danger" [class.d-none]="nbrCarton.valid || nbrCarton.untouched">Nombre Carton is required field</small> 
+            </mat-form-field>
+
+            <mat-form-field  appearance="outline">
+                <mat-label  for=" Expediteur" > Expediteur: </mat-label>
+                <mat-select placeholder="" name="libelle" [(ngModel)]="demande.Expediteur" required #Expediteur="ngModel"
+                [class.is-invalid]="Expediteur.invalid && Expediteur.touched">
+            <mat-option *ngFor="let item of Expediteurs" value="{{item.id}}">{{item.libelleDirection}}</mat-option >
+             </mat-select>
+                <small class="text-danger" [class.d-none]=" Expediteur.valid ||  Expediteur.untouched">Expediteur 1ere age is required fied</small> 
+                </mat-form-field>
+
+                     
+            <mat-form-field  appearance="outline">
+                <mat-label  for=" designation_Nomenclature" >designation_Nomenclature: </mat-label>
+                <mat-select placeholder="" name="designation" [(ngModel)]="demande.designation_nomenclature" required #designation_nomenclature="ngModel"
+                [class.is-invalid]="designation_nomenclature.invalid && designation_nomenclature.touched">
+            <mat-option *ngFor="let itemm of designation_Nomenclatures" value="{{itemm.id}}">{{itemm.designation_Nomenclature}}</mat-option >
+             </mat-select>
+                <small class="text-danger" [class.d-none]=" designation_nomenclature.valid ||  designation_nomenclature.untouched"> Designation_Nomenclature is required field</small> 
+                </mat-form-field>
+
+                <mat-form-field  appearance="outline">
+                    <mat-label  for=" lieu" >Destinataire: </mat-label>
+                    <mat-select placeholder="" name="destination" [(ngModel)]="demande.Destinataire" required #Destinataire="ngModel"
+                    [class.is-invalid]="Destinataire.invalid && Destinataire.touched">
+                <mat-option *ngFor="let Destinataire of Lieux" value="{{Destinataire.id}}">{{Destinataire.lieu}}</mat-option >
+                 </mat-select>
+                    <small class="text-danger" [class.d-none]=" Destinataire.valid || Destinataire.untouched"> Destinataire is required field</small> 
+                    </mat-form-field>
+                    <div mat-dialog-actions [align]="'end'">
+                        
+                        
+                        <button mat-raised-button [disabled]="enregForm.form.invalid" color="Success" type="Submit"   >Envoyer</button>
+
+
+            
+</div>
+
+        

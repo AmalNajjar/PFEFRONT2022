@@ -37,14 +37,14 @@ export class GestionAgenceComponent implements OnInit {
    
 
  this.service.getAgences().subscribe(
-    data=>{ console.log("response recieved");
-    this.dataSource=new MatTableDataSource(data) ;
-               this.dataSource.paginator=this.paginator;
-               this.dataSource.sort=this.sort
-             
-    },
-    error=>console.log("exception occured")
-  )
+  data=>{ console.log("response recieved");
+  this.dataSource=new MatTableDataSource(data) ;
+  this.dataSource.paginator=this.paginator;
+  this.dataSource.sort=this.sort
+},
+error=>console.log("exception occured")
+
+)
     }
   
 

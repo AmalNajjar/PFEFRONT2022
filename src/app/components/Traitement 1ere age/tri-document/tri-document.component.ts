@@ -6,26 +6,25 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 import { SuiviDocumentService } from 'src/app/service/suivi-document.service';
 import { Router } from '@angular/router';
-import { SuiviDocument } from 'src/app/models/suivi-document';
+
 import { CreeDocumentComponent } from '../cree-document/cree-document.component';
 import { MatDialog } from '@angular/material/dialog';
 import { FicheDeRenseignementComponent } from '../fiche-de-renseignement/fiche-de-renseignement.component';
-import { Nomenclature } from 'src/app/models/nomenclature';
-import { Direction } from 'src/app/models/direction';
+
 import { DestructionDocumentComponent } from '../destruction-document/destruction-document.component';
+import { InventaireDocument2emeageComponent } from '../inventaire-document2emeage/inventaire-document2emeage.component';
+import { SuiviDocument } from 'src/app/models/suivi-document';
 @Component({
   selector: 'app-tri-document',
   templateUrl: './tri-document.component.html',
   styleUrls: ['./tri-document.component.css']
 })
 export class TriDocumentComponent implements OnInit {
-  
+
   doc:SuiviDocument[]=[];
   sortedData:SuiviDocument[];
  suividocument=new SuiviDocument()
- nomenclatures:Nomenclature []=[];
- direction: Direction []=[];
-  displayedColumns: string[] = ['id','chapitre_comptable','numero_document','nombre_De_pages','date_De_creation_Du_Document','date_d_entree_Du_Document','nombre_De_documents','limite_de_conservation_1ere_age','Destruction'];
+  displayedColumns: string[] = ['id','chapitre_comptable','numero_document','nombre_De_pages','date_De_creation_Du_Document','date_d_entree_Du_Document','codedocument','numero_d_ordre','emplacement_physique','nombre_De_documents','limite_de_conservation_1ere_age','LibelleDirection','designation_Nomenclature','Destruction'];
   dataSource!: MatTableDataSource<any>;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -55,14 +54,22 @@ export class TriDocumentComponent implements OnInit {
 
 
     openDialoggg(item : any) { 
+      console.log(item);
       this.dialog.open(DestructionDocumentComponent, {
         width:'62%',
-        data : {
-          suividocument : item
-        }
+        height:'62%',
+        data : [item]
       });   
     }
-   
+    openDialogggg(item : any) { 
+      console.log(item);
+      this.dialog.open(InventaireDocument2emeageComponent, {
+        width:'77%',
+        height:'70%',
+        data : [item]
+        });
+      }   
+
     sortData(sort: Sort) {
     const data = this.doc.slice();
     if (!sort.active || sort.direction === '') {
@@ -110,48 +117,12 @@ export class TriDocumentComponent implements OnInit {
      width:'35%'
     });
   }
-  ficherenseignament(id:number){
-    this._router.navigate(['fiche',id]);
-   }
-  openDialogg() {  
-    this.dialog.open(FicheDeRenseignementComponent, {
-      width:'45%',
-      
-    });
-  }
  
-
 }
 function compare(a: number | string|Date, b: number | string|Date, isAsc: boolean) {
   return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
 }
-  /*displayedColumns: string[] = ['id','Numero_document', 'Chapitre_comptable', 'Nombre_De_pages', 'Date_De_creation_Du_Document','Date_d_entree_Du_Document',' Nombre_De_documents','limite_de_conservation_1ere_age'];
-
-  dataSource !: MatTableDataSource<any>;
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
-   constructor(private _liveAnnouncer: LiveAnnouncer,private service:SuiviDocumentService) {}
-
-   @ViewChild(MatSort) sort!: MatSort;
-
-  ngOnInit(): void {
-    this.service.getDocuments().subscribe(
-      data=>{ console.log("response recieved");
-      this.dataSource=new MatTableDataSource(data) ;
-                 this.dataSource.paginator=this.paginator;
-    this.dataSource.sort=this.sort
-  },
-  error=>console.log("exception occured")
-)
   
-  }
-  announceSortChange(sortState: Sort) {
-    
-    if (sortState.direction) {
-      this._liveAnnouncer.announce(`Sorted ${sortState.direction}ending`);
-    } else {
-      this._liveAnnouncer.announce('Sorting cleared');
-    }
-  }*/
 
 
 

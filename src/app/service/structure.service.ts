@@ -11,14 +11,14 @@ import { Structure } from '../models/structure';
 export class StructureService {
 
   constructor(private _http : HttpClient) { }
-  baseUrl:string="http://localhost:8084/api/test/Structures/";
+  baseUrl:string="http://localhost:8083/api/test/Structures/";
 
   public registrerCompteFromRemoteS(structure :any):Observable<any>{
-    return this._http.post<any>("http://localhost:8084/api/test/Structure",structure);
+    return this._http.post<any>("http://localhost:8083/api/test/Structure",structure);
   }
   
   public getStructures(){
-    return this._http.get<any>("http://localhost:8084/api/test/Structures");   
+    return this._http.get<any>("http://localhost:8083/api/test/Structures");   
   }
 
   getStructureById(id:number):Observable<any>{
@@ -34,10 +34,10 @@ export class StructureService {
   }
 
   getLieu():Observable<LieuArchive[]>{
-    return this._http.get<LieuArchive[]>("http://localhost:8084/api/test/lieu");
+    return this._http.get<LieuArchive[]>("http://localhost:8083/api/test/lieu");
   }
  
   getLieuById(id:any):Observable<LieuArchive>{
-    return this._http.get<LieuArchive>(`http://localhost:8084/api/test/lieu/${id}`);
+    return this._http.get<LieuArchive>(`http://localhost:8083/api/test/lieu/${id}`);
   }
 }

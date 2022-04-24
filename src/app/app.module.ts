@@ -78,6 +78,8 @@ import { DeleteCompteComponent } from './components/utilisateur/delete-compte/de
 import { GestionParametragesComponent } from './components/utilisateur/gestion-parametrages/gestion-parametrages.component';
 import { UpdateCompteComponent } from './components/utilisateur/update-compte/update-compte.component';
 import { SearchfilterPipe } from './pipes/searchfilter.pipe';
+import { DemandeDeVersementComponent } from './components/Traitement 1ere age/demande-de-versement/demande-de-versement.component';
+import { InventaireDocument2emeageComponent } from './components/Traitement 1ere age/inventaire-document2emeage/inventaire-document2emeage.component';
 
 @NgModule({
   declarations: [
@@ -133,6 +135,8 @@ import { SearchfilterPipe } from './pipes/searchfilter.pipe';
     AjoutDateDestructionComponent,
     DestructionDocumentComponent,
     DashComponent,
+    DemandeDeVersementComponent,
+    InventaireDocument2emeageComponent,
 
     
 
