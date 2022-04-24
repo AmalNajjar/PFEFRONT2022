@@ -25,6 +25,7 @@ import { UpdateStructureComponent } from './components/structure/update-structur
 import { AjoutDateDestructionComponent } from './components/Traitement 1ere age/ajout-date-destruction/ajout-date-destruction.component';
 import { AjouteDateDestructionComponent } from './components/Traitement 1ere age/ajoute-date-destruction/ajoute-date-destruction.component';
 import { CreeDocumentComponent } from './components/Traitement 1ere age/cree-document/cree-document.component';
+import { DemandeDeVersementComponent } from './components/Traitement 1ere age/demande-de-versement/demande-de-versement.component';
 import { DestructionDocumentComponent } from './components/Traitement 1ere age/destruction-document/destruction-document.component';
 import { FicheDeRenseignementComponent } from './components/Traitement 1ere age/fiche-de-renseignement/fiche-de-renseignement.component';
 import { ConsulterSortieDocComponent } from './components/Traitement 1ere age/inscription-sortie-doc/consulter-sortie-doc/consulter-sortie-doc.component';
@@ -145,7 +146,9 @@ const routes: Routes = [
       path:'traiter-demande',
       component:TraiterDemandeComponent
     },
-   
+   {
+     path:'demandedeversement',component:DemandeDeVersementComponent
+   }
     ]
   },
 

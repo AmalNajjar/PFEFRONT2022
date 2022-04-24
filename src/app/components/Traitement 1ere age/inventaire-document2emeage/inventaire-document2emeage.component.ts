@@ -1,6 +1,6 @@
 import { DatePipe } from '@angular/common';
 import { Component, Inject, OnInit, ViewChild } from '@angular/core';
-import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 import { SuiviDocument } from 'src/app/models/suivi-document';
 
 import { SuiviDocumentService } from 'src/app/service/suivi-document.service';
+import { DemandeDeVersementComponent } from '../demande-de-versement/demande-de-versement.component';
 
 
 @Component({
@@ -27,7 +28,7 @@ export class InventaireDocument2emeageComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
- constructor(@Inject(MAT_DIALOG_DATA) public data: any,private service:SuiviDocumentService,private _router:Router,private dialog:MatDialog) { }
+ constructor( public dialogRef: MatDialogRef<InventaireDocument2emeageComponent>,@Inject(MAT_DIALOG_DATA) public data: any,private service:SuiviDocumentService,private _router:Router,private dialog:MatDialog) { }
 
 
  ngOnInit(): void {
@@ -39,13 +40,17 @@ export class InventaireDocument2emeageComponent implements OnInit {
     this.Datedeversemnent2emeage=this.LocalDate;
   
     }
-
+opendialog(){
+  this.dialog.open(DemandeDeVersementComponent, {
+    width:'35%'
+   });
+}
     
-    openDialog(){
-      
-  
+    onNoClick(): void {
+      this.dialogRef.close();
+      //this._router.navigate(['dashboard/demandedeversement']);
+      this.opendialog()
     }
-     
     }
   
      
